@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visión y Misión - Interfaz</title>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --light: #f4f7ff;
+      --dark: #1e293b;
+      --text: #475569;
+      --radius: 14px;
+      --card: #ffffff;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: white;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+      font-weight: 800;
+    }
+
+    .section-card {
+      background: var(--card);
+      padding: 22px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      margin-bottom: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .value-card {
+      background: white;
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .value-card h3 {
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .value-card p {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    @media(max-width: 850px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="brand">MiEmpresa</a>
+    <nav>
+      <a href="#vision">Visión</a>
+      <a href="#mision">Misión</a>
+      <a href="#valores">Valores</a>
+      <a href="#objetivos">Objetivos</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- Visión -->
+    <section id="vision" class="section-card">
+      <h1>Visión</h1>
+      <p style="color:var(--text); font-size:16px;">
+        Ser una organización líder y reconocida por la innovación, la calidad de nuestros servicios
+        y el compromiso con el desarrollo sostenible, contribuyendo positivamente al bienestar
+        de nuestra comunidad.
+      </p>
+    </section>
+
+    <!-- Misión -->
+    <section id="mision" class="section-card">
+      <h1>Misión</h1>
+      <p style="color:var(--text); font-size:16px;">
+        Brindar soluciones eficientes y de alto valor, orientadas a mejorar la experiencia de nuestros
+        clientes mediante tecnología, profesionalismo y un enfoque humano en cada proceso.
+      </p>
+    </section>
+
+    <!-- Valores -->
+    <section id="valores" class="section-card">
+      <h2>Nuestros Valores</h2>
+
+      <div class="grid-2">
+        <div class="value-card">
+          <h3>Responsabilidad</h3>
+          <p>Cumplimos con nuestros compromisos y actuamos con integridad.</p>
+        </div>
+        <div class="value-card">
+          <h3>Innovación</h3>
+          <p>Buscamos soluciones creativas para mejorar continuamente.</p>
+        </div>
+        <div class="value-card">
+          <h3>Respeto</h3>
+          <p>Valoramos a las personas y fomentamos un ambiente armonioso.</p>
+        </div>
+        <div class="value-card">
+          <h3>Trabajo en equipo</h3>
+          <p>Cooperamos para alcanzar metas comunes con eficiencia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objetivos -->
+    <section id="objetivos" class="section-card">
+      <h2>Objetivos Estratégicos</h2>
+      <ul style="color:var(--text); font-size:16px; line-height:1.6;">
+        <li>Mejorar la calidad y tiempos de respuesta en nuestros procesos.</li>
+        <li>Expandir nuestros servicios a nuevos sectores y mercados.</li>
+        <li>Fortalecer la capacitación del personal y el liderazgo interno.</li>
+        <li>Integrar tecnologías modernas que optimicen las operaciones.</li>
+        <li>Incrementar el nivel de satisfacción y fidelización del cliente.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> - MiEmpresa | Todos los derechos reservados
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
